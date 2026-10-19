@@ -6,9 +6,9 @@ using Verse;
 namespace NotThisOne;
 
 [HarmonyPatch(typeof(Pawn), nameof(Pawn.GetGizmos))]
-public class Pawn_GetGizmos
+public static class Pawn_GetGizmos
 {
-    private static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> __result, Pawn __instance)
+    public static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> __result, Pawn __instance)
     {
         foreach (var item in __result)
         {

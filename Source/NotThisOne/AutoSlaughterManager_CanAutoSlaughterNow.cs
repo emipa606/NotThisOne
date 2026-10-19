@@ -4,9 +4,9 @@ using Verse;
 namespace NotThisOne;
 
 [HarmonyPatch(typeof(AutoSlaughterManager), nameof(AutoSlaughterManager.CanAutoSlaughterNow))]
-internal class AutoSlaughterManager_CanAutoSlaughterNow
+internal static class AutoSlaughterManager_CanAutoSlaughterNow
 {
-    private static bool Postfix(bool __result, Pawn animal)
+    public static bool Postfix(bool __result, Pawn animal)
     {
         if (!__result)
         {
